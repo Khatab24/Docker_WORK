@@ -1,0 +1,29 @@
+Running Nginx container using Docker
+To start setting up Nginx container
+
+Step 1: Pull the latest image from docker hub 
+
+docker pull nginx
+Step 2: Create a new directory on your machine from where you want to serve the html files.
+
+mkdir nginx-html
+Step 3: cd into that directory
+
+cd nginx-html
+Step 4: Create index.html and whatever files you like, using any text editor.
+
+Step 5: Run this command to start the container
+
+docker run -d -p 8000:80 -v /YOUR_HTML_FILES_ABSOLUTE_DIRECTORY_PATH:/usr/share/nginx/html --name my-nginx-container nginx
+
+To stop the container:
+docker stop my-nginx-container
+
+To start the container again:
+docker start my-nginx-container
+
+To remove the stopped container:
+docker rm my-nginx-container
+
+To remove the running container:
+docker rm my-nginx-container -f
